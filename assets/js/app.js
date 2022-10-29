@@ -7,6 +7,7 @@ const $l = document.querySelector('p.location');
 async function displayUser(username) {
   $n.textContent = 'cargando...';
   const response = await fetch(`${usersEndpoint}/${username}`);
+  const data = await response.json(); 
   //console.log(data);
   $n.textContent = `${data.name}`;
   $b.textContent = `${data.blog}`;
